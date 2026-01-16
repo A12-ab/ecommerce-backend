@@ -17,8 +17,8 @@ def calculate_order_total(order_items: List[OrderItem]) -> Decimal:
     Sums all subtotals in a consistent order.
     """
     total = Decimal('0.00')
-    # Sort by item id to ensure deterministic order
-    sorted_items = sorted(order_items, key=lambda x: x.id)
+    # Sort by item id if available, otherwise maintain order
+    sorted_items = sorted(order_items, key=lambda x: x.id if x.id else 0)
     for item in sorted_items:
         total += Decimal(str(item.subtotal))
     return total

@@ -38,7 +38,7 @@ def test_product_model(db_session, test_category):
     
     assert product.id is not None
     assert product.sku == "TEST001"
-    assert product.price == 99.99
+    assert float(product.price) == 99.99
 
 
 def test_order_model(db_session, test_user):
@@ -77,4 +77,4 @@ def test_order_item_model(db_session, test_user, test_product):
     db_session.commit()
     
     assert order_item.id is not None
-    assert order_item.subtotal == 99.99
+    assert float(order_item.subtotal) == 99.99

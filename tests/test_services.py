@@ -74,3 +74,4 @@ def test_order_service_calculate_total_deterministic(db_session, test_user, test
     
     # Totals should be the same (deterministic)
     assert total1 == total2
+    assert float(total1) == float(total2)
