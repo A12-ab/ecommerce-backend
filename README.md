@@ -29,8 +29,7 @@ backend/
 ├── app/              # Main application code
 ├── alembic/          # Database migrations
 ├── tests/            # Test suite
-├── seeders/          # Database seeders
-├── docker/           # Docker configuration
+├── seeders/          # Database seeders           # Docker configuration
 └── docs/             # Documentation
 ```
 
@@ -39,7 +38,7 @@ backend/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd practice
+   cd e-commerce
    ```
 
 2. **Create virtual environment**
@@ -91,7 +90,7 @@ backend/
 5. **Set up database**
    ```bash
    # Using Docker Compose
-   docker-compose -f docker/docker-compose.yml up -d
+   docker compose -f docker/docker-compose.yml up -d
    
    # Run migrations
    alembic upgrade head
@@ -127,8 +126,7 @@ pytest --cov=app --cov-report=html
 ## Docker Deployment
 
 ```bash
-cd docker
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Environment Variables
